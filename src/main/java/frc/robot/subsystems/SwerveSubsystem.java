@@ -92,7 +92,7 @@ public class SwerveSubsystem extends SubsystemBase {
         limelightPoseEstimator_swerve = limelight_swerve.createPoseEstimator(LimelightPoseEstimator.EstimationMode.MEGATAG1);
 
     }
-
+    //code stolen from the amazing Bronc Botz 3481!!!!! Wow, such awesome code
     public double updateLimelight(Limelight ll, LimelightPoseEstimator llPoseEst, double llTImestamp, Angle cameraYaw, String llname) {
         ll
                 .getSettings()
@@ -131,7 +131,7 @@ public class SwerveSubsystem extends SubsystemBase {
     @Override
     public void periodic() {
         swerveDrive.updateOdometry();
-        lastLLTimestamp_swerve = updateLimelight(limelight_swerve, limelightPoseEstimator_swerve, lastLLTimestamp_swerve, Degrees.of(0), "swerve");
+        lastLLTimestamp_swerve = updateLimelight(limelight_swerve, limelightPoseEstimator_swerve, lastLLTimestamp_swerve, Degrees.of(32.1), "swerve");
         SmartDashboard.putNumber("HubDistance(Meters)", distanceFromHubMeters());
         // This method will be called once per scheduler run
     }
